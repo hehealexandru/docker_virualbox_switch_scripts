@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo rm -f /etc/modprobe.d/virtualbox.conf
+sudo rm -f /etc/modprobe.d/blacklist-kvm.conf
+sudo modprobe kvm
+sudo modprobe kvm_intel
+echo "Switched to Docker Desktop mode. Reboot required."
+

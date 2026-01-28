@@ -1,0 +1,6 @@
+#!/bin/bash
+echo -e "blacklist kvm\nblacklist kvm_intel" | sudo tee /etc/modprobe.d/virtualbox.conf
+sudo modprobe -r kvm_intel
+sudo modprobe -r kvm
+echo "Switched to VirtualBox mode. Reboot required."
+
