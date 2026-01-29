@@ -1,6 +1,18 @@
 #!/bin/bash
-echo -e "blacklist kvm\nblacklist kvm_intel" | sudo tee /etc/modprobe.d/virtualbox.conf
-sudo modprobe -r kvm_intel
-sudo modprobe -r kvm
-echo "Switched to VirtualBox mode. Reboot required."
+set -e
+
+sudo -v
+
+echo -e "blacklist kvm\nblacklist kvm_intel" | sudo tee /etc/modprobe.d/virtualbox.conf >/dev/null
+sudo modprobe -r kvm_intel || true
+sudo modprobe -r kvm || true
+
+if lsmod | grep -q '^kvm'; then
+  echo "ERROR: KVM is still loaded. Aborting reboot."
+  exit 1
+fi
+
+echo "Switched to VirtualBox mode. Rebooting in 10 seconds... (Ctrl+C to cancel)"
+sleep 10
+sudo reboot
 

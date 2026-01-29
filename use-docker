@@ -1,7 +1,18 @@
 #!/bin/bash
+set -e
+
+sudo -v
+
 sudo rm -f /etc/modprobe.d/virtualbox.conf
 sudo rm -f /etc/modprobe.d/blacklist-kvm.conf
 sudo modprobe kvm
 sudo modprobe kvm_intel
-echo "Switched to Docker Desktop mode. Reboot required."
 
+if ! lsmod | grep -q '^kvm_intel'; then
+  echo "ERROR: kvm_intel is not loaded. Aborting reboot."
+  exit 1
+fi
+
+echo "Switched to Docker Desktop mode. Rebooting in 10 seconds... (Ctrl+C to cancel)"
+sleep 10
+sudo reboot
