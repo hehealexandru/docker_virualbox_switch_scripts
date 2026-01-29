@@ -54,7 +54,7 @@ A **reboot is required** after each switch to ensure stability.
 Clone the repository:
 ```sh
 git clone https://github.com/hehealexandru/docker_virualbox_switch_scripts.git
-cd docker_virualbox_switch_script
+cd docker_virualbox_switch_scripts
 ```
 
 Move the Scripts to System Path
