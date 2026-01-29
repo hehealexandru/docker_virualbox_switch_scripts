@@ -77,10 +77,13 @@ which use-virtualbox
 Run which Program You want to Use
 ```sh
 use-docker
-sudo reboot
+```
+
+Or
+
+```sh
 
 use-virtualbox
-sudo reboot
 ```
 ## 🚧 Future Work
 
