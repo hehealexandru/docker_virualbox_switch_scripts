@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔀 Docker Desktop ↔ VirtualBox Hypervisor Switch (Linux)
+# Docker Desktop ↔ VirtualBox Hypervisor Switch (Linux)
 
 ![Linux](https://img.shields.io/badge/OS-Linux-orange)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-E95420)
@@ -13,7 +13,7 @@
 
 ---
 
-## 📌 Overview
+## Overview
 
 This project provides two simple **Bash scripts** that allow you to safely switch between:
 
@@ -26,7 +26,7 @@ This solution allows both tools to coexist on the same system using a **clean sw
 
 ---
 
-## 🧠 Technical Background
+## Technical Background
 
 - Docker Desktop for Linux runs inside a lightweight VM using **QEMU + KVM**
 - VirtualBox requires **direct access to Intel VT-x / AMD-V**
@@ -38,7 +38,7 @@ Attempting to run both simultaneously results in errors such as:
 
 ---
 
-## 🔀 Switching Concept
+## Switching Concept
 
 | Mode | KVM | VirtualBox | Docker Desktop |
 |----|----|-----------|----------------|
@@ -49,7 +49,7 @@ A **reboot is required** after each switch to ensure stability.
 
 ---
 
-## ⚙️ Installation Tutorial:
+## Installation Tutorial:
 
 Clone the repository:
 ```sh
@@ -85,7 +85,7 @@ Or
 
 use-virtualbox
 ```
-## 🚧 Future Work
+## Future Work
 
 This project is currently tested on **Ubuntu 22.04 / 24.04**.
 
